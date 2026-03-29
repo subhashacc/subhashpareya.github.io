@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subhash Pareya | Finance & Accounts Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #1a2e45;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #f8f5f0;
+    --white: #ffffff;
+    --text: #2c3e50;
+    --text-light: #6b7c93;
+    --border: #e0d9cf;
+    --section-bg: #f4f1ec;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    background: rgba(13,27,42,0.97);
+    backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 64px;
+    border-bottom: 1px solid rgba(201,168,76,0.25);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: white; transition: 0.3s; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    padding: 100px 5% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+  }
+  #hero::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 42%;
+    background: var(--navy-mid);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 560px; }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    color: var(--white);
+    line-height: 1.15;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero-name span { color: var(--gold); }
+  .hero-title {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-stats {
+    display: flex; gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+  .hero-btns {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 13px 28px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.35);
+    color: white;
+    padding: 13px 28px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+
+  .hero-visual {
+    position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+    z-index: 3;
+    width: 34%;
+    max-width: 380px;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    padding: 2rem;
+  }
+  .hero-card-title {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+  }
+  .skill-bar { margin-bottom: 1rem; }
+  .skill-bar-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.78rem; color: rgba(255,255,255,0.7);
+    margin-bottom: 6px;
+  }
+  .skill-bar-track {
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 2px;
+    animation: barGrow 1s 0.8s ease both;
+    transform-origin: left;
+  }
+  @keyframes barGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  /* ── SECTION BASE ── */
+  section { padding: 80px 5%; }
+  .section-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .section-title.light { color: var(--white); }
+  .section-divider {
+    width: 48px; height: 3px;
+    background: var(--gold);
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+  .about-text p strong { color: var(--text); font-weight: 600; }
+  .about-highlights {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .highlight-item {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 0.9rem 1rem;
+    border-radius: 0 4px 4px 0;
+  }
+  .highlight-item strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .highlight-item span {
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+  .about-skills h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 1.2rem;
+  }
+  .skill-tag-group { margin-bottom: 1.5rem; }
+  .skill-group-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-tag {
+    background: var(--navy);
+    color: rgba(255,255,255,0.85);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+  .skill-tag.gold { background: rgba(201,168,76,0.12); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--section-bg); }
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 8px; bottom: 0;
+    width: 2px; background: var(--border);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem; top: 6px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 3px solid var(--section-bg);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+  .timeline-period {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .timeline-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  .timeline-org {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+  }
+  .timeline-points { list-style: none; }
+  .timeline-points li {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.3rem;
+  }
+  .timeline-points li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--gold);
+    font-size: 0.75rem;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  #certifications { background: var(--navy); }
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .cert-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 6px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .cert-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .cert-icon {
+    width: 40px; height: 40px;
+    background: rgba(201,168,76,0.15);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .cert-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+  .cert-issuer {
+    font-size: 0.78rem;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+  .cert-year { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+  /* ── PORTFOLIO ── */
+  #portfolio { background: var(--white); }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .portfolio-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .portfolio-card:hover { box-shadow: 0 8px 32px rgba(13,27,42,0.12); transform: translateY(-4px); }
+  .portfolio-card-top {
+    background: var(--navy);
+    height: 100px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .portfolio-card-top::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.15) 0%, transparent 60%);
+  }
+  .portfolio-card-body { padding: 1.3rem; }
+  .portfolio-card-tag {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .portfolio-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .portfolio-card-desc {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--section-bg); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-info p {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .contact-items { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-item {
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .contact-item-icon {
+    width: 42px; height: 42px;
+    background: var(--navy);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .contact-item-text strong {
+    display: block;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin-bottom: 2px;
+  }
+  .contact-item-text span {
+    font-size: 0.9rem;
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text);
+    background: var(--white);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--gold); }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .form-submit {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 13px 28px;
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--gold); color: var(--navy); }
+  .form-note { font-size: 0.75rem; color: var(--text-light); margin-top: 0.3rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 2rem 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .footer-text { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+  .footer-links { display: flex; gap: 1.2rem; }
+  .footer-links a {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.78rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-visual { display: none; }
+    #hero::after { display: none; }
+  }
+  @media (max-width: 680px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero-stats { gap: 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .about-highlights { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    section { padding: 60px 5%; }
+    .hero-btns { flex-direction: column; }
+    .btn-primary, .btn-outline { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SP</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Finance &amp; Accounts Professional · Bangalore</div>
+    <h1 class="hero-name">Subhash<br><span>Pareya</span></h1>
+    <p class="hero-title">
+      SAP FICO · US GAAP · IFRS · R2R · AP · AR<br>
+      15+ years transforming financial complexity into clarity<br>across NGO, Corporate &amp; Educational sectors.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Core Accounting</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Sectors Served</div>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Hire Me / Collaborate</a>
+      <a href="#experience" class="btn-outline">View Experience</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hero-card-title">Core Competencies</div>
+      <div class="skill-bar">
+        <div class="skill-bar-label"><span>SAP FICO / Tally / QuickBooks</span><span>90%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-bar-label"><span>US GAAP &amp; IFRS</span><span>85%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-bar-label"><span>R2R / GL / AP / AR</span><span>92%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-bar-label"><span>GST / TDS / Indian Tax</span><span>88%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-bar-label"><span>Excel / Power BI</span><span>85%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <div class="section-label">Who I Am</div>
+    <h2 class="section-title">About Me</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I am a <strong>Finance &amp; Accounts Professional</strong> based in Bangalore with over <strong>15 years of total professional experience</strong>, including 6+ years of deep-core accounting expertise across NGO, corporate, and educational sectors.</p>
+      <p>My journey spans roles in financial reporting, accounts payable &amp; receivable, general ledger, compliance, and ERP implementation. I bring a unique cross-sector perspective — having worked with international standards (US GAAP, IFRS) alongside Indian regulatory frameworks (GST, TDS, Income Tax, Professional Tax).</p>
+      <p>Currently at <strong>CEE South, Bangalore</strong>, I manage end-to-end finance operations, statutory compliance, and project accounting for development sector programmes. I am actively pursuing <strong>US Accounting &amp; Bookkeeping Certification</strong> and self-learning SAP FICO to expand my global finance capabilities.</p>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <strong>MCom – Accounts</strong>
+          <span>Kolhan University</span>
+        </div>
+        <div class="highlight-item">
+          <strong>MA – Development Management</strong>
+          <span>University of Mysore</span>
+        </div>
+        <div class="highlight-item">
+          <strong>FCRA Compliance</strong>
+          <span>NGO Sector Specialist</span>
+        </div>
+        <div class="highlight-item">
+          <strong>SAP FICO</strong>
+          <span>Self-learning on SAP ECC</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-skills reveal">
+      <h3>Technical Toolkit</h3>
+      <div class="skill-tag-group">
+        <div class="skill-group-label">ERP &amp; Accounting Software</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SAP FICO</span>
+          <span class="skill-tag">Tally ERP</span>
+          <span class="skill-tag">QuickBooks Online</span>
+          <span class="skill-tag">Zoho Books</span>
+        </div>
+      </div>
+      <div class="skill-tag-group">
+        <div class="skill-group-label">Accounting Standards</div>
+        <div class="skill-tags">
+          <span class="skill-tag gold">US GAAP</span>
+          <span class="skill-tag gold">IFRS</span>
+          <span class="skill-tag gold">Ind AS</span>
+          <span class="skill-tag gold">ASC 606</span>
+          <span class="skill-tag gold">IFRS 16</span>
+        </div>
+      </div>
+      <div class="skill-tag-group">
+        <div class="skill-group-label">Process Areas</div>
+        <div class="skill-tags">
+          <span class="skill-tag">R2R / General Ledger</span>
+          <span class="skill-tag">Accounts Payable</span>
+          <span class="skill-tag">Accounts Receivable</span>
+          <span class="skill-tag">Bank Reconciliation</span>
+          <span class="skill-tag">MIS Reporting</span>
+        </div>
+      </div>
+      <div class="skill-tag-group">
+        <div class="skill-group-label">Compliance &amp; Reporting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">GST &amp; TDS</span>
+          <span class="skill-tag">FCRA</span>
+          <span class="skill-tag">Income Tax</span>
+          <span class="skill-tag">Professional Tax</span>
+          <span class="skill-tag">Excel &amp; Power BI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="reveal">
+    <div class="section-label">Career Journey</div>
+    <h2 class="section-title">Work Experience</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="timeline reveal">
+
+    <div class="timeline-item">
+      <div class="timeline-period">2020 – Present</div>
+      <div class="timeline-role">Accountant / Admin &amp; Accounts Officer</div>
+      <div class="timeline-org">CEE South — Centre for Environment Education, Bangalore</div>
+      <ul class="timeline-points">
+        <li>Managing complete financial operations for development sector programmes including KSAPCC and HSS-CEE projects</li>
+        <li>Handling GST returns, TDS deductions, FCRA compliance, and statutory reporting</li>
+        <li>Preparing MIS reports, budget tracking, donor reporting, and project-wise fund utilization statements</li>
+        <li>Drafting HR letters, vendor contracts, Terms of Reference, and liaising with banks and government bodies</li>
+        <li>Implementing and managing accounts in Tally ERP and coordinating with auditors</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-period">2018 – 2020</div>
+      <div class="timeline-role">Finance Officer</div>
+      <div class="timeline-org">XITE Gamharia (Xavier Institute of Technology)</div>
+      <ul class="timeline-points">
+        <li>Managed institutional accounts, fee collection, and vendor payments</li>
+        <li>Handled FCRA compliance for foreign-funded grants and donations</li>
+        <li>Prepared financial statements, bank reconciliations, and annual audit support</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-period">2015 – 2018</div>
+      <div class="timeline-role">Accounts Executive (via Randstad)</div>
+      <div class="timeline-org">TSRDS — Tata Steel Rural Development Society</div>
+      <ul class="timeline-points">
+        <li>Processed accounts payable and receivable for CSR-funded rural development projects</li>
+        <li>Maintained project-wise books of accounts and handled TDS/GST compliance</li>
+        <li>Coordinated with programme teams on budget planning and variance analysis</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-period">2012 – 2015</div>
+      <div class="timeline-role">Accounts Officer</div>
+      <div class="timeline-org">RKM — Ramakrishna Mission, New Delhi</div>
+      <ul class="timeline-points">
+        <li>Managed end-to-end bookkeeping and financial reporting for the mission's Delhi operations</li>
+        <li>Handled donor fund accounting, FCRA submissions, and audit preparation</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-period">2008 – 2012</div>
+      <div class="timeline-role">Accounts Faculty &amp; Administrative Staff</div>
+      <div class="timeline-org">Star Computer Education</div>
+      <ul class="timeline-points">
+        <li>Taught accounts, Tally, and basic finance to students; managed institutional billing and petty cash</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="reveal">
+    <div class="section-label">Qualifications &amp; Learning</div>
+    <h2 class="section-title light">Education &amp; Certifications</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="cert-grid reveal">
+    <div class="cert-card">
+      <div class="cert-icon">🎓</div>
+      <div class="cert-title">MCom in Accounts</div>
+      <div class="cert-issuer">Kolhan University</div>
+      <div class="cert-year">Master of Commerce</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">📘</div>
+      <div class="cert-title">MA – Development Management</div>
+      <div class="cert-issuer">University of Mysore</div>
+      <div class="cert-year">Master's Degree</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🇺🇸</div>
+      <div class="cert-title">US Accounting &amp; Bookkeeping</div>
+      <div class="cert-issuer">Certification (In Progress)</div>
+      <div class="cert-year">US GAAP · QuickBooks · Payroll</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">⚙️</div>
+      <div class="cert-title">SAP FICO</div>
+      <div class="cert-issuer">Self-Learning – SAP ECC</div>
+      <div class="cert-year">FI · CO · GL · AP · AR · AA</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">📊</div>
+      <div class="cert-title">US Tax Compliance</div>
+      <div class="cert-issuer">Course Completed</div>
+      <div class="cert-year">Form 4797 · Sec 1231/1245/1250</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">💹</div>
+      <div class="cert-title">Power BI &amp; Advanced Excel</div>
+      <div class="cert-issuer">Self-Certified</div>
+      <div class="cert-year">Dashboards · MIS · Pivot · VBA</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="reveal">
+    <div class="section-label">Work Samples</div>
+    <h2 class="section-title">Portfolio Highlights</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="portfolio-grid reveal">
+
+    <div class="portfolio-card">
+      <div class="portfolio-card-top">📋</div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">LinkedIn Content</div>
+        <div class="portfolio-card-title">US GAAP vs IFRS Infographic Series</div>
+        <div class="portfolio-card-desc">Animated HTML/CSS infographics comparing US GAAP and IFRS treatment of revenue recognition (ASC 606), leases (IFRS 16), and financial instruments — published on LinkedIn for MNC finance audiences.</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-card-top">📑</div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">Training Material</div>
+        <div class="portfolio-card-title">GST &amp; Professional Tax MCQ Quiz</div>
+        <div class="portfolio-card-desc">Developed a comprehensive MCQ quiz presentation covering GST Section 17(5), Professional Tax multi-state scenarios, and ITC compliance — designed for staff training and client education at CEE South.</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-card-top">💰</div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">Project Accounting</div>
+        <div class="portfolio-card-title">HSS-CEE Project Budget 2026</div>
+        <div class="portfolio-card-desc">Converted multi-sheet PDF budget data into a structured, formatted Excel workbook for the KSAPCC project — enabling budget tracking, fund utilization reporting, and audit-ready documentation.</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-card-top">📄</div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">Compliance</div>
+        <div class="portfolio-card-title">FCRA &amp; Donor Fund Accounting</div>
+        <div class="portfolio-card-desc">7+ years of hands-on FCRA compliance across three NGO organizations — maintaining separate FCRA accounts, donor reporting, Form FC-4, and coordinating with statutory auditors for annual filings.</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-card-top">📈</div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">US Tax Course</div>
+        <div class="portfolio-card-title">Gains &amp; Losses – Form 4797</div>
+        <div class="portfolio-card-desc">Completed US Tax Compliance assignment covering Section 1231/1245/1250 property disposals, depreciation recapture, capital vs ordinary gain classification, and Form 4797 preparation with scenario-based examples.</div>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-card-top">🤖</div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">Research &amp; Thought Leadership</div>
+        <div class="portfolio-card-title">AI in Accounting – Content Series</div>
+        <div class="portfolio-card-desc">LinkedIn content series on AI applications in finance — covering OCR for AP automation, ML for reconciliation, NLP for financial statement analysis, and RPA in ERP workflows.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Contact Me</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <p>Open to <strong>full-time finance roles</strong>, <strong>freelance bookkeeping &amp; accounting</strong> projects, and <strong>consulting engagements</strong> — especially with MNCs, NGOs, and growing businesses needing US GAAP, IFRS, SAP, or Indian compliance expertise.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <strong>Location</strong>
+            <span>Bangalore, Karnataka, India</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">💼</div>
+          <div class="contact-item-text">
+            <strong>Open To</strong>
+            <span>Full-time · Freelance · Consulting</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🌐</div>
+          <div class="contact-item-text">
+            <strong>LinkedIn</strong>
+            <span>linkedin.com/in/subhashpareya</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal" id="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="f-name" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="f-email" placeholder="you@company.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Purpose</label>
+        <select id="f-purpose">
+          <option value="">Select purpose…</option>
+          <option>Job Opportunity</option>
+          <option>Freelance / Project</option>
+          <option>Consulting Inquiry</option>
+          <option>LinkedIn Collaboration</option>
+          <option>General Enquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea id="f-msg" placeholder="Tell me about your requirement, project, or opportunity…"></textarea>
+      </div>
+      <button class="form-submit" onclick="sendForm()">Send Message →</button>
+      <p class="form-note" id="form-status"></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Subhash Pareya</div>
+  <div class="footer-text">© 2025 Subhash Pareya · Finance &amp; Accounts Professional · Bangalore</div>
+  <div class="footer-links">
+    <a href="#hero">Top</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:#0d1b2a;padding:1.5rem 5%;gap:1.2rem;z-index:999;border-top:1px solid rgba(201,168,76,0.2)';
+    }
+  }
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = 'none';
+    });
+  });
+
+  // Form handler
+  function sendForm() {
+    const name = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const purpose = document.getElementById('f-purpose').value;
+    const msg = document.getElementById('f-msg').value.trim();
+    const status = document.getElementById('form-status');
+
+    if (!name || !email || !purpose || !msg) {
+      status.style.color = '#e74c3c';
+      status.textContent = 'Please fill in all fields before sending.';
+      return;
+    }
+    const subject = encodeURIComponent(`[Website Enquiry] ${purpose} – ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPurpose: ${purpose}\n\nMessage:\n${msg}`);
+    window.location.href = `mailto:subhashpareya@gmail.com?subject=${subject}&body=${body}`;
+    status.style.color = '#27ae60';
+    status.textContent = '✓ Your email client will open now. Thank you!';
+  }
+</script>
+</body>
+</html>
